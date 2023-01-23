@@ -28,18 +28,36 @@
 /*Общие */
 
 :root {
---fon-pink:#FEAFC3;
---fon-blue:#69A9FF;
---fon-yellow:#FCC850;
+    --fon-pink: #FEAFC3;
+    --fon-blue: #69A9FF;
+    --fon-yellow: #FCC850;
+
+    --extra-dark: #2D3440;
+    --dark: #565C66;
+    --neutral: #B9B9B9;
+    --light: #E7E7E7;
+    --extra-light: #FCFCFC;
+    --white: #FFFFFF;
+
+    --extra-bright: #FF2F64;
+    --bright: #FF4A78;
+
+    --special-extra-light:#FFCBD8;
+    --special-neutral:#FF7799;
+
+    --extra-light-icon: rgba(252, 252, 252, 0.3);
+    --extra-light-hover: rgba(252, 252, 252, 0.5);
 }
 
-.no {
+.display-none {
     display: none;
+
 }
 
 body {
     background-color: var(--fon-pink);
     font-family: "Inter", "Arial", sans-serif;
+    color: var(--extra-dark);
     font-size: 16px;
     line-height: 24px;
     font-weight: 400;
@@ -51,11 +69,10 @@ body {
 }
 
 /*
+
 *, *:before, *:after {
     outline: solid 1px red;
-}
-*/
-
+}*/
 .visually-hidden {
     position: absolute;
     width: 1px;
@@ -79,7 +96,8 @@ footer {
 
 /*ХЕДЕР МЕНЮ*/
 
-.navigation {
+
+.header {
     display: flex;
     justify-content: space-between;
     margin-top: 24px;
@@ -87,61 +105,248 @@ footer {
 
 .logo {
     margin-right: 16px;
+    flex-grow: 0;
 }
 
-.services-navigation {
+.navigation {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
+    margin-top: 10px;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    min-width: 500px;
 }
 
 .user-navigation {
     display: flex;
     justify-content: flex-end;
     align-items: flex-start;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    margin-top: 12px;
+    min-width: 500px;
 }
 
-.services {
+.catalog-wrapper {
+    position: relative;
+}
+
+.navigation-item {
     font: 400 16px/20px Inter;
     background-color: transparent;
     padding: 8px 16px;
     text-decoration: none;
-    color: black;
+    color: var(--extra-dark);
     border: none;
     cursor: pointer;
-    margin-top: 10px;
+    border-radius: 30px;
 }
 
-.services.catalog {
-    margin-right: 23px;
+.navigation-item:hover {
+    background-color: var(--extra-light-hover);
+}
+
+.navigation-item:focus-visible {
+    background-color: var(--extra-light-hover);
+    outline: 2px solid var(--extra-dark);
+    outline-offset: -2px;
+}
+
+.navigation-item:active {
+    background-color: var(--extra-light);
+}
+
+.navigation-item.catalog {
+    padding-right: 40px;
+    background-image: url(../images/header/menu.svg);
+    background-repeat: no-repeat;
+    background-position: center right 19px
+}
+
+.navigation-item.catalog.active {
+    background-image: url(../images/header/menu-active.svg);
+}
+
+.navigation-item.active {
+    background-color: var(--bright);
+    color: var(--extra-light);
+}
+
+.navigation-item.active:hover {
+    opacity: 60%;
+}
+
+.navigation-item.active:active {
+    opacity: 30%;
 }
 
 .user {
-    font: 400 16px/20px Inter;
+    font: 400 14px/20px Inter;
     border: none;
     cursor: pointer;
     padding: 6px 16px;
-    background-color: rgba(252, 252, 252, 0.3);
+    background-color: var(--extra-light-icon);
     border-radius: 30px;
     margin-left: 16px;
-    margin-top: 12px;
+}
+
+.user.active {
+    background-color: var(--bright);
+    color: var(--extra-light);
+}
+
+.user.basket {
+    padding-left: 38px;
+    background-image: url(../images/header/basket-icon.svg);
+    background-repeat: no-repeat;
+    background-position: center left 16px;
+}
+
+.user.basket.active {
+    background-image: url(../images/header/basket-icon-active.svg);
+    background-repeat: no-repeat;
+    background-position: center left 16px;
+}
+
+.user.entrance {
+    padding-left: 39px;
+    background-image: url(../images/header/enter-icon.svg);
+    background-repeat: no-repeat;
+    background-position: center left 16px;
+}
+
+.user.entrance.active {
+    background-image: url(../images/header/enter-icon-active.svg);
+    background-repeat: no-repeat;
+    background-position: center left 16px;
 }
 
 .user.search {
     height: 20px;
+    background-image: url(../images/header/search-icon.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin-left: 0;
+    position: relative;
 }
 
-.user.basket {
-    padding-left: 30px;
+.user.search.active {
+    background-image: url(../images/header/search-icon-active.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 
-.user.entrance {
-    padding-left: 34px;
-}
-
-.contacts-phone {
+.user.contacts-phone {
     font: 700 16px/20px Inter;
-    color: black;
+    color: var(--extra-dark);
     text-decoration: none;
-    margin-top: 18px;
+    padding: 6px 16px;
+    background-color: transparent;
+}
+
+.user:hover {
+    background-color: var(--extra-light-hover);
+}
+
+.user:focus-visible {
+    outline: 2px solid var(--extra-dark);
+    outline-offset: -2px;
+}
+
+.user:active {
+    background-color: var(--extra-light);
+}
+
+.user.active:hover {
+    opacity: 60%;
+    background-color: var(--bright);
+}
+
+.user.active:active {
+    opacity: 30%;
+    background-color: var(--bright);
+}
+
+/*    КАТАЛОГ    */
+
+.catalog-list {
+    position: absolute;
+    background-color: var(--extra-light);
+    padding: 6px 0;
+    margin: 0;
+    border-radius: 4px;
+    width: max-content;
+    top: 44px;
+    box-shadow: 0 8px 16px rgba(45, 52, 64, 0.12);
+}
+
+.catalog-link {
+    font: 400 14px/20px Inter;
+    color: var(--extra-dark);
+    text-decoration: none;
+    padding: 6px 16px;
+    display: block;
+}
+
+.catalog-link.new {
+    font: 700 14px/20px Inter;
+    padding: 8px 16px;
+    margin-bottom: 8px;
+}
+
+.catalog-link.active {
+    background-color: var(--bright);
+    color: var(--extra-light);
+}
+
+.catalog-link:hover {
+    background-color: var(--special-extra-light);
+}
+
+.catalog-link:focus-visible {
+    outline: 2px solid var(--extra-dark);
+    outline-offset: -2px;
+}
+
+.catalog-link:active {
+    background-color: var(--special-neutral);
+}
+
+.catalog-item {
+    list-style-type: none;
+}
+
+/*    ПОИСК    */
+
+.search-input {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    font: 400 16px/20px Inter;
+    color: var(--neutral);
+    padding: 14px 16px;
+    border: 1px solid #B9B9B9;
+    border-radius: 4px;
+    width: 324px;
+}
+
+/*    КАБИНЕТ    */
+
+.user-navigation-wrapper {
+    position: relative;
+}
+
+.personal-account {
+    position: absolute;
+    right: 0;
+    top: 150px;
+    background-color: var(--extra-light);
+    border-radius: 4px;
+    padding: 48px;
+    min-width: 324px;
+}
+
+.personal-account span {
+    font: 700 24px/30px Inter;
 }
