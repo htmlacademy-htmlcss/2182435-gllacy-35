@@ -101,7 +101,7 @@
                 </button>
               </li>
             </ul>
-            <button class="button-additional order" type="button">Оформить заказ</button>
+            <a class="button-additional order" href="#">Оформить заказ</a>
             <span class="total-amount">Итого: <b>790</b> ₽</span>
           </div>
         </div>
@@ -116,7 +116,7 @@
     <main>
 
 
-      <h1 class="visually-hidden">Магазин Глейси – это онлайн и офлайн-магазин по продаже мороженого собственногопроизводства на развес.</h1>
+      <h1 class="visually-hidden">Магазин Глейси – мы продаем мороженое собственного производства на развес.</h1>
 
 
       <div class="slider">
@@ -125,7 +125,7 @@
 
         <div class="slide-wrapper ice-cream-strawberry active-slide">
           <div class="slide-description-wrapper">
-            <header class="slide-title">Нежный пломбир<br>с клубничным джемом</header>
+            <div class="slide-title">Нежный пломбир<br>с клубничным джемом</div>
             <p class="slide-description">Натуральное мороженое из свежих сливок<br>и молока с вкуснейшим клубничным джемом – это идеальный десерт для всей семьи.</p>
             <a class="slide button-main" href="#">Заказать</a>
           </div>
@@ -136,7 +136,7 @@
 
         <div class="slide-wrapper ice-cream-banan">
           <div class="slide-description-wrapper">
-            <header class="slide-title">Сливочное мороженое со вкусом банана</header>
+            <div class="slide-title">Сливочное мороженое со вкусом банана</div>
             <p class="slide-description">Сливочное мороженое с ярким банановым вкусом подарит вам свежесть и наслаждение даже в самый жаркий летний день.</p>
             <a class="slide button-main" href="#">Заказать</a>
           </div>
@@ -148,7 +148,7 @@
 
         <div class="slide-wrapper ice-cream-marshmallow">
           <div class="slide-description-wrapper">
-            <header class="slide-title">Карамельный пломбир с маршмеллоу</header>
+            <div class="slide-title">Карамельный пломбир с маршмеллоу</div>
             <p class="slide-description">Необычный сладкий десерт с карамельным топпингом и кусочками зефира завоюет сердца сладкоежек всех возрастов.</p>
             <a class="slide button-main" href="#">Заказать</a>
           </div>
@@ -163,6 +163,16 @@
 
         <button class="slider-button following" type="button">
           <span class="visually-hidden">Следующее мороженка</span>
+        </button>
+
+        <button class="preview-button previous" type="button">
+          <img class="slide-image" src="/images/index/creamy-banana-flavored-ice-cream.png" alt="Сливочное мороженое со вкусом банана." width="306" height="507">
+          <span class="visually-hidden">Предыдущее мороженка превью</span>
+        </button>
+
+        <button class="preview-button following" type="button">
+          <img class="slide-image" src="/images/index/caramel-sundae-with-marshmallows.png" alt="Нежный пломбир с клубничным джемом." width="306" height="507">
+          <span class="visually-hidden">Следующее мороженка превью</span>
         </button>
 
 
@@ -184,6 +194,111 @@
           </li>
         </ol>
 
+        <div class="social-list-wrap">
+          <span class="visually-hidden">Мы в соц сетях</span>
+          <ul class="social-list">
+            <li class="social-item">
+              <a class="social-link telegram" href="https://t.me/htmlacademy">
+                <span class="visually-hidden">Телеграмм</span>
+              </a>
+            </li>
+            <li class="social-item">
+              <a class="social-link vk" href="https://www.youtube.com/user/htmlacademyru">
+                <span class="visually-hidden">В контакте</span>
+              </a>
+            </li>
+            <li class="social-item">
+              <a class="social-link youtube" href="https://twitter.com/htmlacademy_ru">
+                <span class="visually-hidden">Ютуб</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+
+      <section class="present-wrap">
+
+        <h2>Заказывайте мороженое<br>и получайте подарки!</h2>
+
+        <div class="present malinka-for-free">
+          <h3>Малинка даром!</h3>
+          <p>При покупке 2 кг любого фруктового мороженого добавим в ваш заказ банку малинового варенья бесплатно.</p>
+          <button class="button-main">Хочу подарок</button>
+        </div>
+
+        <div class="present marshmallow-for-free">
+          <h3>Маршмеллоу даром!</h3>
+          <p>При покупке 2 кг пломбира добавим<br>в ваш заказ упаковку нежных<br>зефирок совершенно бесплатно.</p>
+          <button class="button-main">Хочу подарок</button>
+        </div>
+
+      </section>
+
+
+      <section>
+
+        <h2 class="popular-flavors-heading">Попробуйте самые популярные<br>вкусы нашего мороженого</h2>
+
+        <ul class="popular-flavors-list">
+
+          <li class="product-card">
+            <a class="product-card-link" href="#">
+              <img class="product-card-image" src="/images/catalog/raspberry.png" width="168" height="168" alt="">
+              <h3 class="product-card-title">Малинка</h3>
+              <p>Сливочное мороженое с малиновым джемом</p>
+              <span class="product-card-price">310 ₽/кг</span>
+            </a>
+            <button class="button-product"><span class="visually-hidden">Положить в корзину</span></button>
+          </li>
+
+          <li class="product-card">
+            <a class="product-card-link" href="#">
+              <img class="product-card-image" src="/images/catalog/pistachio.png" width="168" height="168" alt="">
+              <h3 class="product-card-title">Фисташка</h3>
+              <p>Фисташковый пломбир с кусочками шоколада</p>
+              <span class="product-card-price">340 ₽/кг</span>
+            </a>
+            <button class="button-product"><span class="visually-hidden">Положить в корзину</span></button>
+          </li>
+
+          <li class="product-card">
+            <a class="product-card-link" href="#">
+              <img class="product-card-image" src="/images/catalog/blueberry.png" width="168" height="168" alt="">
+              <h3 class="product-card-title">Черника</h3>
+              <p>Крем-брюле<br>с черничным джемом</p>
+              <span class="product-card-price">330 ₽/кг</span>
+            </a>
+            <button class="button-product"><span class="visually-hidden">Положить в корзину</span></button>
+          </li>
+
+          <li class="product-card">
+            <a class="product-card-link" href="#">
+              <img class="product-card-image" src="/images/catalog/bubble-gum.png" width="168" height="168" alt="">
+              <h3 class="product-card-title">Бабл-гам</h3>
+              <p>Ванильный пломбир<br>со сладкой посыпкой</p>
+              <span class="product-card-price">320 ₽/кг</span>
+            </a>
+            <button class="button-product"><span class="visually-hidden">Положить в корзину</span></button>
+          </li>
+        </ul>
+
+      </section>
+
+      <div>
+        <b>Магазин Глейси – это онлайн и офлайн-магазин по продаже мороженого собственного производства на развес</b>
+        <ul>
+          <li>Всё наше мороженое изготавливается на собственном производстве с использованием современного оборудования и проверенных временем технологий.</li>
+          <li>Для приготовления мороженого используются сливки и молоко высочайшего качества. Все ингредиенты и добавки произведены из натурального сырья.</li>
+          <li>Закупка ингредиентов производится только у проверенных фермерских хозяйств, с которыми нас связывает долговременное сотрудничество.</li>
+          <li>Доставка нашего мороженого осуществляется в специальном термопаке, который не даёт мороженому растаять и позволяет сохранить превосходный вкус.</li>
+        </ul>
+      </div>
+
+      <div>
+        <b>Новое в нашем блоге</b>
+        <p>10 способов сервировки фруктовых щербетовк столу</p>
       </div>
 
     </main>

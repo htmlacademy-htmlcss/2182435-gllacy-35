@@ -20,7 +20,7 @@
     font-family: "Inter";
     font-style: normal;
     font-weight: 900;
-    src: url("../fonts/inter-700.woff2") format("woff2");
+    src: url("../fonts/inter-900.woff2") format("woff2");
     font-display: swap;
 }
 
@@ -73,11 +73,11 @@ body {
     min-height: 100vh;
 }
 
-/**/
+/*
 
 *, *:before, *:after {
     outline: solid 1px red;
-}
+}*/
 
 .visually-hidden {
     position: absolute;
@@ -108,7 +108,7 @@ footer {
     box-shadow: 0 4px 12px rgba(45, 52, 64, 0.1);
     cursor: pointer;
     outline: 4px solid rgba(255, 47, 100, 0.3);
-
+    text-decoration: none;
 }
 
 .button-additional:hover {
@@ -137,9 +137,23 @@ footer {
     border: none;
     box-shadow: 0 4px 12px rgba(45, 52, 64, 0.1);
     cursor: pointer;
-    outline: 4px solid rgba(255, 47, 100, 0.3);
+    outline: 4px solid rgba(252, 252, 252, 0.4);
     text-decoration: none;
 }
+
+.button-main:hover {
+    background-color: rgba(252, 252, 252, 0.4);
+    outline: 4px solid var(--extra-light);
+}
+
+.button-main:focus-visible {
+    outline: 2px solid var(--extra-dark);
+    background-color: rgba(252, 252, 252, 0.4);
+}
+
+.button-main:active {
+    outline: 2px solid var(--extra-dark);
+   }
 
 
 
@@ -151,8 +165,7 @@ footer {
     justify-content: space-between;
     margin-top: 24px;
     z-index: 1;
-    margin-bottom: 22px;
-}
+    margin-bottom: 18px;}
 
 .logo {
     margin-right: 16px;
@@ -444,6 +457,10 @@ border: 0;
 opacity: 40%;
 }
 
+.search-input:not(:placeholder-shown) ~ .search-reset {
+    display: block;
+}
+
 /*    КАБИНЕТ    */
 
 .user-navigation-wrapper {
@@ -601,13 +618,13 @@ margin-bottom: 24px;
 }
 
 .basket-products-item.raspberry {
-background-image: url(../images/index/raspberry.png);
+background-image: url(../images/catalog/raspberry.png);
 background-repeat: no-repeat;
 background-size: 46px 46px;
 }
 
 .basket-products-item.bubble-gum {
-    background-image: url(../images/index/bubble-gum.png);
+    background-image: url(../images/catalog/bubble-gum.png);
     background-repeat: no-repeat;
     background-size: 46px 46px;
     }
@@ -622,6 +639,10 @@ opacity: 60%;
 .slider {
     position: relative;
     display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 554px;
+    margin-bottom: 81px;
 }
 
 .slide-wrapper {
@@ -645,12 +666,13 @@ opacity: 60%;
 .slide-title {
     font: 900 36px/46px Inter;
     margin-bottom: 24px;
+    margin-top: -13px;
 }
 
 .slide-description {
     font: 400 18px/24px Inter;
     margin:0;
-    margin-bottom: 48px;
+    margin-bottom: 58px;
 }
 
 .slide-image-wrapper {
@@ -660,6 +682,7 @@ opacity: 60%;
     background-color: var(--special-extra-light);
     display: flex;
     align-items: center;
+    justify-content: center;
     margin: 0 40px;
 }
 
@@ -667,42 +690,337 @@ opacity: 60%;
 
 .slider-button {
     position: absolute;
-    top: 50%;
-    transform: translatey(-50%);
     width: 38px;
     height: 38px;
-    border: 2px solid var(--extra-light);
+    outline: 2px solid var(--extra-light);
     background-color: rgba(252, 252, 252, 0.3);
     border-radius: 50%;
     background-image: url(../images/index/arrow.svg);
     background-repeat: no-repeat;
     background-position: center;
+    border: none;
+}
+
+.slider-button:hover {
+    background-color: var(--extra-light);
+    background-image: url(../images/index/arrow-activ.svg);
+}
+
+.slider-button:focus-visible {
+    background-image: url(../images/index/arrow-activ.svg);
+    outline: 2px solid var(--extra-dark);
+}
+
+.slider-button:active {
+    background-image: url(../images/index/arrow-activ.svg);
+    background-color: rgba(252, 252, 252, 0.5);
+    outline: 2px solid rgba(252, 252, 252, 0.5);
 }
 
 .slider-button.previous {
-    right: 278px;
-}
+    left: 542px;}
 
 .slider-button.following {
-left: 542px;
+    left: 854px;
+    transform: rotate(180deg);
 }
+
+.preview-button {
+width: 100px;
+height: 100px;
+border-radius: 50%;
+background-color: var(--special-extra-light);
+display: flex;
+align-items: center;
+justify-content: center;
+border: none;
+opacity: 40%;
+cursor: pointer;
+}
+
+.preview-button.previous {
+margin-left: 17px;
+}
+
+.preview-button.following {
+    margin-left: 44px;
+}
+
+.preview-button:hover {
+    opacity: 100%;
+}
+
+.preview-button:focus-visible {
+outline: none;
+opacity: 100%;
+border: 2px solid var(--extra-dark);
+}
+
+.preview-button:active {
+opacity: 100%;
+width: 120px;
+height: 120px;
+}
+
+
+/*     ПАГИНАЦИЯ СЛАЙДОВ        */
 
 .slider-pagination {
     display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    z-index: 1;
     position: absolute;
     bottom: 0;
     left: 0;
 }
 
-.slider-button.previous::before {
-    content: "";
-    width: 100px;
-    height: 100px;
-    opacity: 0.4;
+.slider-pagination-item {
+    margin: 0;
+    list-style-type: none;
+}
+
+.slider-pagination-button {
+    width: 12px;
+    height: 12px;
+    margin: 0;
+    padding: 0;
     background-color: var(--extra-light);
-    display: block;
+    opacity: 30%;
     border-radius: 50%;
-    background-image: url(../images/index/creamy-banana-flavored-ice-cream.png);
+    cursor: pointer;
+    border: none;
+    margin-right: 8px;
+}
+
+.slider-pagination-button-current {
+    opacity: 100%;
+}
+.slider-pagination-button:hover {
+    opacity: 100%;
+}
+
+.slider-pagination-button:active {
+    opacity: 20%;
+}
+
+.slider-pagination-button:focus-visible {
+    outline: 2px solid var(--extra-dark);
+    opacity: 100%;
+}
+
+/*     СОЦ СЕТИ     */
+
+.social-list-wrap {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.social-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+.social-item {
+    list-style-type: none;
+    margin: 0;
+}
+
+.social-item:not(:first-child) {
+margin-left: 16px;
+}
+
+.social-link {
+    display: block;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: none;
+    background-position: center;
+    outline: 3px solid rgba(255, 255, 255, 0.5);
+    outline-offset: 0;
+}
+
+.social-link:hover {
+    background-color: var(--extra-dark);}
+
+.social-link:focus-visible {
+    background-color: var(--extra-dark);
+    outline: 3px solid var(--extra-dark);
+}
+
+.social-link:active {
+    background-color: var(--extra-dark);
+    opacity: 50%;
+}
+
+.telegram {
+    background-image: url("../images/social/telegram.svg");
+    background-repeat: no-repeat;
+}
+
+.vk {
+    background-image: url("../images/social/vk.svg");
+    background-repeat: no-repeat;
+}
+
+.youtube {
+    background-image: url("../images/social/youtube.svg");
+    background-repeat: no-repeat;
+}
+
+/*      ПОДАРКИ        */
+
+.present-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 55px 30px;
+    justify-content: center;
+}
+
+.present-wrap h2 {
+    font: 900 32px/46px Inter;
+    margin: 0;
+    text-align: center;
+    width: 1000px;
+}
+
+
+.present {
+    background-color: var(--special-neutral);
+    border-radius: 16px;
+    padding: 36px;
+    width: 328px;
+    padding-right: 206px;
+    margin-bottom: 81px;
+}
+
+.present h3 {
+    font: 700 24px/30px Inter;
+    margin: 0;
+    margin-bottom: 28px;
+}
+
+.present p {
+    font: 400 16px/22px Inter;
+    margin: 0;
+    margin-bottom: 28px;
+}
+
+.malinka-for-free {
+background-image: url(../images/index/malinka-for-free.png);
+background-repeat: no-repeat;
+background-position: bottom right;
+}
+
+.marshmallow-for-free {
+    background-image: url(../images/index/marshmallow-for-free.png);
+    background-repeat: no-repeat;
+    background-position: bottom right;
+}
+
+/*    КАТАЛОГ КАРТОЧКА   */
+
+.popular-flavors-heading {
+    font: 900 32px/46px Inter;
+    color: var(--extra-dark);
+    text-align: center;
+    margin: 0;
+    margin-bottom: 56px;
+}
+
+.popular-flavors-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    gap: 40px 30px;
+}
+
+.product-card {
+    list-style-type: none;
+    position: relative;
+}
+
+.product-card-link {
+    display: block;
+    text-decoration: none;
+    background-color: var(--extra-light);
+    border-radius: 8px;
+    width: 190px;
+    padding: 40px;
+    margin-top: 51px;
+    padding-top: 132px;
+    padding-bottom: 28px;
+}
+
+.product-card-image {
+    width: 168px;
+    height: 168px;
+    border-radius: 50%;
+    margin: 0 auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+
+
+.product-card-title {
+    font: 700 20px/24px Inter;
+    color: var(--extra-dark);
+    text-align: center;
+    margin: 0;
+    margin-bottom: 8px;
+}
+
+.product-card-link p {
+    font: 400 16px/22px Inter;
+    color: var(--extra-dark);
+    text-align: center;
+    margin: 0;
+    margin-bottom: 19px;
+}
+
+.product-card-price {
+    font: 700 20px/24px Inter;
+    color: var(--extra-dark);
+}
+
+.button-product {
+    position: absolute;
+    right: 40px;
+    bottom: 24px;
+    width: 32px;
+    height: 32px;
+    background-color: var(--extra-bright);
+    border-radius: 50%;
+    border: none;
+    background-image: url(../images/header/basket-icon-active.svg);
     background-repeat: no-repeat;
     background-position: center;
+}
+
+.button-product:hover {
+    background-color: rgba(252, 252, 252, 0.3);
+    outline: 2px solid var(--extra-bright);
+    outline-offset: -2px;
+    background-image: url(../images/header/basket-icon.svg);
+}
+
+.button-product:focus-visible {
+    outline: 2px solid var(--extra-dark);
+    outline-offset: -2px;
+}
+
+.button-product:active {
+    background-color: var(--special-extra-light);
+    outline: 2px solid var(--extra-bright);
+    outline-offset: -2px;
+    background-image: url(../images/header/basket-icon.svg);
 }
