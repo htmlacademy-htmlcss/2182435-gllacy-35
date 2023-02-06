@@ -64,10 +64,10 @@ body {
     min-height: 100vh;
 }
 
-/**/
+/*
 *, *:before, *:after {
     outline: solid 1px red;
-}
+}*/
 
 .visually-hidden {
     position: absolute;
@@ -95,6 +95,7 @@ main {
     cursor: pointer;
     outline: 4px solid rgba(255, 47, 100, 0.3);
     text-decoration: none;
+    display: inline-block;
 }
 
 .button-additional:hover {
@@ -125,6 +126,7 @@ main {
     cursor: pointer;
     outline: 4px solid rgba(252, 252, 252, 0.4);
     text-decoration: none;
+    display: inline-block;
 }
 
 .button-main:hover {
@@ -719,7 +721,7 @@ margin-left: 56px;
 .slide-description {
     font: 400 18px/24px Inter;
     margin:0;
-    margin-bottom: 58px;
+    margin-bottom: 48px;
 }
 
 .slider-button {
@@ -1247,28 +1249,31 @@ background-image: url(../images/index/thermometer-icon.svg);
     margin-top: 13px;
 }
 
-.delivery-label {
+.form-element {
     display: flex;
     flex-direction: column;
-    font: 700 16px/20px Inter;
     justify-content: flex-start;
     position: relative;
-
 }
 
-.delivery-label.date {
+.delivery-label {
+    font: 700 16px/20px Inter;
+    width: fit-content;
+}
+
+.form-element.date {
 width: 117px;
 }
 
-.delivery-label.tel {
+.form-element.tel {
 width: 287px;
 }
 
-.delivery-label.text {
+.form-element.text {
 width: 420px;
 }
 
-.delivery-label input {
+.form-element input {
     font: 400 16px/20px Inter;
     color: var(--neutral);
     padding: 12px 6px 12px 15px;
@@ -1307,7 +1312,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
 	padding: 10px 8px;
 	position: absolute;
     top: -10px;
-	/* visibility: hidden; */
+	visibility: hidden;
 	max-width: 145px;
     min-width: 79px;
 	z-index: 10;
@@ -1336,25 +1341,9 @@ input[type=date]::-webkit-calendar-picker-indicator {
     left: -18px;
 }
 
-
-
-
-/*      вот так работает по инпуту
 .delivery-label:hover .tooltip {
     visibility: visible;
 }
-*/
-
-.delivery-label .tooltip {
-    background-color: red;
-}
-
-
-
-
-
-
-
 
 /*     КОНТАКТЫ      */
 
@@ -1367,7 +1356,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
     padding: 64px;
     position: relative;
     border-radius: 16px;
-    margin-bottom: 48px;
+    margin-bottom: 49px;
 }
 
 .contacts-wrapper {
@@ -1376,56 +1365,66 @@ input[type=date]::-webkit-calendar-picker-indicator {
     background-color: var(--extra-light);
     box-shadow: 0 8px 16px rgba(45, 52, 64, 0.12);
     border-radius: 8px;
-    padding-bottom: 52px;
 }
 
-.contacts-wrapper h3 {
+.address {
     font: 400 16px/22px Inter;
-    margin: 0;
-    margin-bottom: 12px;
+    margin-bottom: 33px;
 }
 
-.contacts-wrapper address {
+.address b {
     font: 700 20px/24px Inter;
     margin-bottom: 24px;
+    margin-top: 12px;
+    display: block;
 }
 
-.contacts-wrapper .contacts-phone {
+.address .contacts-phone {
     display: block;
     font: 700 20px/24px Inter;
     color: var(--extra-dark);
     text-decoration: none;
-    margin: 0;
-    margin-bottom: -14px;
+    margin-top: 12px;
 }
 
-.contacts-wrapper p {
+.address p {
     font: 400 14px/20px Inter;
-    margin-bottom: 42px;
+    margin: 0;
+
 }
 
 
 /*         ФУТЕР         */
 
 
-footer div {
-    width: 340px;
+.social-wrapper-footer {
+   margin-left: 4px;
 }
+
+.info-wrapper {
+    margin: 0 0 0 2px;
+}
+
+.made-in {
+    justify-self: end;
+    margin-right: 14px;
+}
+
 
 footer {
     flex-shrink: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: repeat(3, 360px);
+    gap: 45px;
+    justify-items: flex-start;
+    padding-bottom: 48px;
 }
 
 .info {
-    width: 356px;
     padding: 0;
     margin: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
+    display: grid;
+    grid-template: repeat(2, auto) / repeat(2, auto);
 }
 
 .info li {
@@ -1433,7 +1432,8 @@ footer {
     padding: 0;
     list-style: none;
     margin-left: 24px;
-    width: 154px;
+    margin-bottom: 8px;
+    position: relative;
 }
 
 .info-link {
@@ -1442,13 +1442,52 @@ footer {
     font: 400 14px/20px Inter;
     color: var(--extra-dark);
     text-decoration: none;
+    display: block;
+    width: fit-content;
 }
 
-.made-in {
-    width: 340px;
+.info-link:hover {
+opacity: 50%;
+text-decoration: revert;
 }
 
+.info-link:focus-visible {
+    outline: 2px solid var(--extra-dark);
+    outline-offset: 3px;
+}
 
+.info-link:active {
+color: #ffffff;
+}
+
+.info-link.love {
+    font: 700 14px/20px Inter;
+}
+
+.info-link.love::before {
+    content: url(../images/index/heart-icon.svg);
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    left: -24px;
+    top: 2px;
+}
+
+.made-in span {
+    display: block;
+    font: 400 12px/16px Inter;
+}
+
+.logo-htmlacademy {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.link-htmlacademy {
+    color: var(--extra-dark);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(45, 52, 64, 0.5);
+}
 
 
 

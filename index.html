@@ -222,12 +222,12 @@
             <li class="present malinka-for-free">
               <h4>Малинка даром!</h4>
               <p>При покупке 2 кг любого фруктового мороженого добавим в ваш заказ банку малинового варенья бесплатно.</p>
-              <button class="button-main">Хочу подарок</button>
+              <a class="button-main" href="#">Хочу подарок</a>
             </li>
             <li class="present marshmallow-for-free">
               <h4>Маршмеллоу даром!</h4>
               <p>При покупке 2 кг пломбира добавим<br>в ваш заказ упаковку нежных<br>зефирок совершенно бесплатно.</p>
-              <button class="button-main">Хочу подарок</button>
+              <a class="button-main" href="#">Хочу подарок</a>
             </li>
           </ul>
         </section>
@@ -322,19 +322,24 @@
 
           <p>Укажите адрес и дату доставки, и мы свяжемся<br>с вами, чтобы подтвердить заказ.</p>
 
-          <label class="delivery-label date">Дата
-            <span class="tooltip">Введите дату доставки</span>
-            <input type="date" name="date" value="2020-04-01">
-          </label>
+          <div class="form-element date">
+            <label class="delivery-label date" for="date">Дата
+              <span class="tooltip">Введите дату доставки</span>
+            </label>
+            <input id="date" type="date" name="date" value="2020-04-01">
+          </div>
 
-          <label class="delivery-label tel">Телефон
-            <input type="tel" name="tel" value="+7 800 999-00-00">
-          </label>
+          <div class="form-element tel">
+            <label class="delivery-label tel" for="tel">Телефон</label>
+            <input id="tel" type="tel" name="tel" value="+7 800 999-00-00">
+          </div>
 
-          <label class="delivery-label text">Адрес
-            <span class="tooltip">Введите название улицы, дома и квартиры</span>
-            <input type="text" name="address" value="ул. Большая Конюшенная, 19/8">
-          </label>
+          <div class="form-element text">
+            <label class="delivery-label text" for="address">Адрес
+              <span class="tooltip">Введите название улицы, дома и квартиры</span>
+            </label>
+            <input id="address" type="text" name="address" value="ул. Большая Конюшенная, 19/8">
+          </div>
 
           <button class="button-additional" type="submit">Отправить</button>
         </form>
@@ -342,23 +347,22 @@
 
 
       <section class="contacts">
-        <h2 class="visually-hidden">Контакты</h2>
         <div class="contacts-wrapper">
-          <h3>Адрес главного офиса<br>и офлайн-магазина:</h3>
-          <address>наб. реки Карповки,<br>5 лит П, Санкт-Петербург</address>
-          <h3>Для заказов по телефону:</h3>
-          <a class="contacts-phone" href="tel:+78128121212">+7 (812) 812-12-12</a>
-          <p>(с 10 до 20 ежедневно)</p>
+          <h2 class="visually-hidden">Контакты</h2>
+          <address class="address">Адрес главного офиса<br>и офлайн-магазина:
+            <b>наб. реки Карповки,<br>5 лит П, Санкт-Петербург</b> Для заказов по телефону:
+            <a class="contacts-phone" href="tel:+78128121212">+7 (812) 812-12-12</a>
+            <p>(с 10 до 20 ежедневно)</p>
+          </address>
           <a class="button-additional" href="#">Форма обратной связи</a>
         </div>
       </section>
-
 
     </main>
 
     <footer>
 
-      <div>
+      <div class="social-wrapper-footer">
         <span class="visually-hidden">Мы в соц сетях</span>
         <ul class="social-list">
           <li class="social-item">
@@ -379,17 +383,21 @@
         </ul>
       </div>
 
-      <ul class="info">
+      <div class="info-wrapper">
         <span class="visually-hidden">Дополнительная информация</span>
-        <li><a class="info-link" href="#">Для поставщиков</a></li>
-        <li><a class="info-link" href="#">Наши документы</a></li>
-        <li><a class="info-link" href="#">О производстве</a></li>
-        <li><a class="info-link" href="#">Экологические стандарты</a></li>
-      </ul>
+        <ul class="info">
+          <li><a class="info-link love" href="#">Для поставщиков</a></li>
+          <li><a class="info-link" href="#">Наши документы</a></li>
+          <li><a class="info-link" href="#">О производстве</a></li>
+          <li><a class="info-link" href="#">Экологические стандарты</a></li>
+        </ul>
+      </div>
 
       <div class="made-in">
-        <img src="images/index/logo-htmlacademy.svg" alt="Логотип HTML academy">
-        <span>Сделано в <a href="https://htmlacademy.ru/">.html academy</a> © 2021</span>
+        <a class="logo-htmlacademy" href="https://htmlacademy.ru/">
+          <img src="images/index/logo-htmlacademy.svg" alt="Логотип HTML academy">
+        </a>
+        <span>Сделано в <a class="link-htmlacademy" href="https://htmlacademy.ru/">.html academy</a> © 2021</span>
       </div>
 
     </footer>
