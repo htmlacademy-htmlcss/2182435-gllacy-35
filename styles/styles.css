@@ -64,10 +64,10 @@ body {
     min-height: 100vh;
 }
 
-/**/
+/*
 *, *:before, *:after {
     outline: solid 1px red;
-}
+}*/
 
 .visually-hidden {
     position: absolute;
@@ -989,6 +989,8 @@ margin-left: 16px;
     width: 328px;
     padding-right: 206px;
     list-style-type: none;
+    position: relative;
+    padding-bottom: 80px;
 }
 
 .present h4 {
@@ -1013,6 +1015,11 @@ background-position: bottom right;
     background-image: url(../images/index/marshmallow-for-free.png);
     background-repeat: no-repeat;
     background-position: bottom right;
+}
+
+.button-main.present-button {
+    position: absolute;
+    bottom: 36px;
 }
 
 /*    КАТАЛОГ КАРТОЧКА   */
@@ -1047,7 +1054,7 @@ background-position: bottom right;
     width: 190px;
     padding: 40px;
     margin-top: 51px;
-    padding-top: 133px;
+    padding-top: 132px;
     padding-bottom: 27px;
 }
 
@@ -1379,8 +1386,12 @@ width: 420px;
 }
 
 input[type=date]::-webkit-calendar-picker-indicator {
-   display: none;;
+   display: none;
 }
+
+input[type=date]::-moz-placeholder {
+    display: none;
+ }
 
 /*       ТУЛТИПЫ       */
 
@@ -1402,7 +1413,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
     font: 400 12px/16px Inter;
     background-color: #FCFCFC;
     border: 1px solid #B9B9B9;
-	border-radius: 1px ;
+	border-radius: 1px;
 	padding: 10px 8px;
 	position: absolute;
     top: -10px;
@@ -1811,6 +1822,7 @@ main h1 {
     margin: 0;
     border: none;
     font: 400 14px/20px inter;
+    position: relative;
 }
 
 .filter-list.fillers {
@@ -1824,6 +1836,15 @@ background-image: url(../images/catalog/select-control.svg);
 background-repeat: no-repeat;
 background-position: center right 16px;
 padding-right: 63px;
+}
+
+.filter-list.sorting-by:hover {
+    background-color: rgba(252, 252, 252, 0.5);
+}
+
+.filter-list.sorting-by:focus-visible {
+    background-color: rgba(252, 252, 252, 0.4);
+    outline: 2px solid var(--extra-light);
 }
 
 .filter-item {
@@ -1853,6 +1874,21 @@ padding-right: 63px;
     text-decoration: none;
     display: inline-block;
     align-self: flex-end;
+}
+
+.button-filters:hover {
+    background-color: var(--extra-light);
+    border: 2px solid rgba(252, 252, 252, 0.3);
+}
+
+.button-filters:focus-visible {
+    border: 2px solid var(--extra-dark);
+    outline: none;
+}
+
+.button-filters:active {
+    background-color: var(--extra-light-hover);
+    border: 2px solid var(--extra-light-hover);
 }
 
 /*  ФИЛЬТРЫ КРУТИЛКА  */
@@ -1887,26 +1923,20 @@ padding-right: 63px;
 }
 
 .range-toggle:hover {
-    background-color: #DCDCDC;
+    background: var(--extra-dark);
+    border: 6px solid #ffffff;
+}
+
+
+.range-toggle:focus {
+    background: var(--extra-dark);
+    border: 6px solid #ffffff;
+    outline: 2px solid var(--extra-dark);
 }
 
 .range-toggle:active {
-    background-color: #000000;
-}
-
-.range-toggle:focus {
-    outline: none;
-}
-
-.range-toggle:focus-visible::before {
-    content: "";
-    width: 20px;
-    height: 20px;
-    border: 2px solid #AF4FFF;
-    display: block;
-    position: absolute;
-    top: -5px;
-    left: -5px;
+    background: var(--extra-dark);
+    border: 6px solid var(--extra-dark);
 }
 
 .toggle-min {
@@ -1945,7 +1975,8 @@ padding-right: 63px;
 }
 
 .range-input:focus-visible {
-    outline: 2px solid #AF4FFF;
+    outline: 2px solid var(--extra-dark);
+    outline-offset: 1px;
 }
 
 .control-input[type="checkbox"]:not(:checked) + .control-mark::before {
@@ -1953,6 +1984,16 @@ padding-right: 63px;
     position: absolute;
     left: 8px;
     top: 2px;
+    height: 16px;
+}
+
+.control-input[type="checkbox"]:not(:checked):hover + .control-mark::before {
+    content: url(../images/catalog/checkbox/checkbox-hover.svg);
+}
+
+.control-input[type="checkbox"]:not(:checked):focus-visible + .control-mark::before {
+outline: 2px solid var(--extra-dark);
+outline-offset: 2px;
 }
 
 .control-input[type="checkbox"]:checked + .control-mark::before {
@@ -1960,7 +2001,22 @@ padding-right: 63px;
     position: absolute;
     left: 8px;
     top: 2px;
+    height: 16px;
 }
+
+.control-input[type="checkbox"]:checked:hover + .control-mark::before {
+    content: url(../images/catalog/checkbox/checkbox-checked-hover.svg);
+}
+
+.control-input[type="checkbox"]:checked:focus-visible + .control-mark::before {
+    outline: 2px solid var(--extra-dark);
+    outline-offset: 2px;
+}
+
+.control-input[type="checkbox"]:checked:focus-visible + .control-mark::before {
+    outline: 2px solid var(--extra-dark);
+    outline-offset: 2px;
+    }
 
 .control-input[type="radio"]:not(:checked) + .control-mark::before {
     content: "";
@@ -1971,6 +2027,15 @@ padding-right: 63px;
     position: absolute;
     left: 8px;
     top: 2px;
+}
+
+.control-input[type="radio"]:not(:checked):hover + .control-mark::before {
+    border: 1px solid var(--extra-light);
+}
+
+.control-input[type="radio"]:checked:focus-visible + .control-mark::before {
+    outline: 2px solid var(--extra-dark);
+    outline-offset: 2px;
 }
 
 .control-input[type="radio"]:checked + .control-mark::before {
@@ -1993,6 +2058,14 @@ padding-right: 63px;
     position: absolute;
     left: 13px;
     top: 7px;
+}
+
+.control-input[type="radio"]:checked:hover + .control-mark::before {
+    border: 1px solid var(--extra-light);
+}
+
+.control-input[type="radio"]:checked:hover + .control-mark::after {
+    background-color: var(--extra-light);
 }
 
 /*     ПАГИНАЦИЯ      */
@@ -2047,6 +2120,28 @@ padding-right: 63px;
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 50%;
+}
+
+.pagination-previous:hover,
+.pagination-link:hover,
+.pagination-next:hover {
+    background-color: var(--extra-light-hover);
+}
+
+.pagination-previous:focus-visible,
+.pagination-link:focus-visible,
+.pagination-next:focus-visible {
+    background-color: var(--extra-light-hover);
+    outline: 1px solid var(--extra-dark);
+    outline-offset: -1px;
+}
+
+.pagination-previous:active,
+.pagination-link:active,
+.pagination-next:active {
+    background-color: var(--extra-light-hover);
+    outline: 1px solid var(--extra-light);
 }
 
 .pagination-previous::before {
