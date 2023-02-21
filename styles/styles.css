@@ -75,7 +75,7 @@ body {
     overflow: hidden;
 }
 
-main {
+.main {
     flex: 1;
 }
 
