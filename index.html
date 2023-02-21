@@ -50,8 +50,7 @@
           <a class="user search" href="#"></a>
           <form class="search-form hidden" action="https://echo.htmlacademy.ru/" method="get">
             <label class="visually-hidden" for="search-label">Поиск по сайту.</label>
-            <input class="search-input" placeholder="Поиск по сайту" type="text" name="site-search" required
-              id="search-label">
+            <input class="search-input" placeholder="Поиск по сайту" type="text" name="site-search" required id="search-label">
             <button class="search-reset hidden" type="reset"><span class="visually-hidden">Очистить поиск</span></button>
           </form>
         </div>
@@ -61,13 +60,11 @@
             <span>Личный кабинет</span>
             <div class="username-wrapper">
               <label class="visually-hidden" for="username">введите почту</label>
-              <input class="username" id="username" name="username" required="required" type="text"
-                placeholder="email@example.com">
+              <input class="username" id="username" name="username" required type="text" placeholder="email@example.com">
             </div>
             <div class="password-wrapper">
               <label class="visually-hidden" for="password">введите пароль</label>
-              <input class="password" id="password" name="password" required="required" type="password"
-                placeholder="••••••">
+              <input class="password" id="password" name="password" required type="password" placeholder="••••••">
             </div>
             <div class="login-wrapper">
               <button class="button-additional login" type="submit">Войти</button>
@@ -115,8 +112,7 @@
             <li class="active-slide">
               <div class="slide-description-wrapper">
                 <h4 class="slide-title">Нежный пломбир<br>с клубничным джемом</h4>
-                <p class="slide-description">Натуральное мороженое из свежих сливок<br>
-                  и молока с вкуснейшим клубничным джемом – это идеальный десерт для всей семьи.</p>
+                <p class="slide-description">Натуральное мороженое из свежих сливок<br>и молока с вкуснейшим клубничным джемом – это идеальный десерт для всей семьи.</p>
                 <a class="slide button-main" href="#">Заказать</a>
               </div>
               <div class="slide-image-wrapper">
@@ -152,7 +148,7 @@
           </button>
           <ol class="slider-pagination">
             <li class="slider-pagination-item">
-              <button class="slider-pagination-button slider-pagination-button-current">
+              <button class="slider-pagination-button slider-pagination-button-current" type="button">
                 <span class="visually-hidden">Нежный пломбир с клубничным джемом</span>
               </button>
             </li>
@@ -213,7 +209,7 @@
                 <p>Сливочное мороженое с малиновым джемом</p>
                 <span class="product-card-price">310 ₽/кг</span>
               </a>
-              <button class="button-product"><span class="visually-hidden">Положить в корзину</span></button>
+              <button class="button-product" type="button"><span class="visually-hidden">Положить в корзину</span></button>
             </li>
             <li class="product-card">
               <a class="product-card-link" href="#">
@@ -222,7 +218,7 @@
                 <p>Фисташковый пломбир с кусочками шоколада</p>
                 <span class="product-card-price">340 ₽/кг</span>
               </a>
-              <button class="button-product"><span class="visually-hidden">Положить в корзину</span></button>
+              <button class="button-product" type="button"><span class="visually-hidden">Положить в корзину</span></button>
             </li>
             <li class="product-card">
               <a class="product-card-link" href="#">
@@ -231,7 +227,7 @@
                 <p>Крем-брюле<br>с черничным джемом</p>
                 <span class="product-card-price">330 ₽/кг</span>
               </a>
-              <button class="button-product"><span class="visually-hidden">Положить в корзину</span></button>
+              <button class="button-product" type="button"><span class="visually-hidden">Положить в корзину</span></button>
             </li>
             <li class="product-card">
               <a class="product-card-link" href="#">
@@ -240,7 +236,7 @@
                 <p>Ванильный пломбир<br>со сладкой посыпкой</p>
                 <span class="product-card-price">320 ₽/кг</span>
               </a>
-              <button class="button-product"><span class="visually-hidden">Положить в корзину</span></button>
+              <button class="button-product" type="button"><span class="visually-hidden">Положить в корзину</span></button>
             </li>
           </ul>
         </section>
@@ -266,8 +262,7 @@
         <section class="newsletter">
           <h2 class="visually-hidden">Подписка на рассылку</h2>
           <div class="newsletter-wrap">
-            <p>Подпишитесь на нашу сладкую рассылку и будьте всегда<br>в курсе всего самого вкусного, что у нас происходит.
-              Обещаем не спамить и не слать всякой ненужной ерунды. Честно =)</p>
+            <p>Подпишитесь на нашу сладкую рассылку и будьте всегда<br>в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой ненужной ерунды. Честно =)</p>
             <form class="newsletter-form" action="https://echo.htmlacademy.ru/" method="post">
               <label class="visually-hidden" for="newsletter-email">Email</label>
               <input class="field" placeholder="email@example.com" type="email" name="newsletter-email" id="newsletter-email" required>
@@ -285,17 +280,17 @@
             <label class="delivery-label date" for="date">Дата
               <span class="tooltip">Введите дату доставки</span>
             </label>
-            <input id="date" type="text" name="date" value="2020.04.01">
+            <input id="date" type="text" name="date" placeholder="2020.04.01" required>
           </div>
           <div class="form-element tel">
             <label class="delivery-label tel" for="tel">Телефон</label>
-            <input id="tel" type="tel" name="tel" value="+7 800 999-00-00">
+            <input id="tel" type="tel" name="tel" placeholder="+7 800 999-00-00" required>
           </div>
           <div class="form-element text">
             <label class="delivery-label text" for="address">Адрес
               <span class="tooltip">Введите название улицы, дома и квартиры</span>
             </label>
-            <input id="address" type="text" name="address" value="ул. Большая Конюшенная, 19/8">
+            <input id="address" type="text" name="address" placeholder="ул. Большая Конюшенная, 19/8" required>
           </div>
           <button class="button-additional" type="submit">Отправить</button>
         </form>
@@ -361,11 +356,11 @@
           <span class="visually-hidden">
             <label class="name" for="name">Имя и фамилия:</label>
           </span>
-          <input class="input-modal" id="name" required type="text" name="name" placeholder="Имя и фамилия">
+          <input class="input-modal" id="name" required type="text" name="name" placeholder="Имя и фамилия" required>
           <span class="visually-hidden">
             <label class="mail" for="mail">Ваш e-mail:</label>
           </span>
-          <input class="input-modal" id="mail" required type="email" name="mail" placeholder="email@example.com">
+          <input class="input-modal" id="mail" required type="email" name="mail" placeholder="email@example.com" required>
           <span class="visually-hidden">
             <label class="request" for="request">Что нужно привезти:</label>
           </span>
